@@ -358,13 +358,13 @@
 
       const originalBtnContent = aiBtn.innerHTML;
       aiBtn.disabled = true;
-      aiBtn.innerHTML = `<i data-lucide="loader-2" class="w-3.5 h-3.5 animate-spin"></i> <span>Memurni...</span>`;
+      aiBtn.innerHTML = <i data-lucide="loader-2" class="w-3.5 h-3.5 animate-spin"></i> <span>Memurni...</span>;
       lucide.createIcons();
 
       const poeticTemplates = [
-        `Selamat pengantin baru buat Nurul Izzah & Muhammad Fitri. Semoga bahtera perkahwinan yang dibina sentiasa dilimpahi kasih sayang, keberkatan, dan kebahagiaan hingga ke jannah-Nya. Aamiin.`,
-        `Barakallahulakuma wa baraka 'alaikuma wa jama'a bainakuma fii khair. Tahniah Nurul Izzah & Muhammad Fitri! Moga ikatan suci ini disinari mawaddah & warahmah.`,
-        `Tahniah Nurul Izzah & Muhammad Fitri atas penyatuan dua jiwa ini. Semoga setiap langkah kehidupan berpasangan ini sentiasa dirahmati dan kekal bahagia selamanya.`
+        Selamat pengantin baru buat Nurul Izzah & Muhammad Fitri. Semoga bahtera perkahwinan yang dibina sentiasa dilimpahi kasih sayang, keberkatan, dan kebahagiaan hingga ke jannah-Nya. Aamiin.,
+        Barakallahulakuma wa baraka 'alaikuma wa jama'a bainakuma fii khair. Tahniah Nurul Izzah & Muhammad Fitri! Moga ikatan suci ini disinari mawaddah & warahmah.,
+        Tahniah Nurul Izzah & Muhammad Fitri atas penyatuan dua jiwa ini. Semoga setiap langkah kehidupan berpasangan ini sentiasa dirahmati dan kekal bahagia selamanya.
       ];
 
       setTimeout(() => {
