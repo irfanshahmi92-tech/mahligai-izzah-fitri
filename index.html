@@ -1,0 +1,442 @@
+```html
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Walimatulurus Nurul Izzah & Muhammad Fitri</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            rosewood: '#8E5A5A',
+            softrose: '#FDF6F6',
+            sage: '#8A9A86',
+            dustypink: '#E8C5C8',
+            warmgold: '#D4AF37',
+            cream: '#FAF8F5'
+          },
+          fontFamily: {
+            cursive: ['Alex Brush', 'cursive'],
+            serif: ['Playfair Display', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #FAF8F5;
+      color: #4A4A4A;
+      overflow-x: hidden;
+    }
+
+    .font-cursive { font-family: 'Alex Brush', cursive; }
+    .font-serif { font-family: 'Playfair Display', serif; }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(232, 197, 200, 0.3);
+    }
+
+    .glow-effect {
+      box-shadow: 0 10px 30px -10px rgba(142, 90, 90, 0.15);
+    }
+
+    .bg-floral-pattern {
+      background-image: radial-gradient(#E8C5C8 0.75px, transparent 0.75px), radial-gradient(#E8C5C8 0.75px, #FAF8F5 0.75px);
+      background-size: 30px 30px;
+      background-position: 0 0, 15px 15px;
+      opacity: 0.4;
+    }
+  </style>
+</head>
+<body class="relative min-h-screen pb-12">
+
+  <!-- Latar Belakang Corak Soft -->
+  <div class="fixed inset-0 bg-floral-pattern -z-10 pointer-events-none"></div>
+
+  <!-- Hiasan Bunga -->
+  <div class="fixed top-0 left-0 w-32 md:w-48 opacity-30 pointer-events-none -z-10 transform -scale-x-100">
+    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M100 0C120 40 160 80 200 100C160 120 120 160 100 200C80 160 40 120 0 100C40 80 80 40 100 0Z" fill="#E8C5C8"/>
+    </svg>
+  </div>
+  <div class="fixed bottom-0 right-0 w-32 md:w-48 opacity-30 pointer-events-none -z-10">
+    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M100 0C120 40 160 80 200 100C160 120 120 160 100 200C80 160 40 120 0 100C40 80 80 40 100 0Z" fill="#8A9A86"/>
+    </svg>
+  </div>
+
+  <main class="max-w-xl mx-auto px-4 pt-8 space-y-8">
+
+    <!-- 1. UTAMA & TAJUK -->
+    <section class="text-center space-y-6 glass-card p-8 rounded-3xl glow-effect relative overflow-hidden">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-rosewood to-transparent opacity-40"></div>
+
+      <div class="flex justify-center text-rosewood mb-2">
+        <i data-lucide="flower-2" class="w-8 h-8 animate-pulse"></i>
+      </div>
+
+      <div class="space-y-2">
+        <p class="text-sm tracking-widest uppercase text-sage font-semibold">Undangan Walimatulurus</p>
+        <p class="text-xs text-gray-500 font-serif italic">"Assalamualaikum WBT & Salam Sejahtera"</p>
+      </div>
+
+      <div class="py-2">
+        <p class="text-xs text-gray-600 mb-1">Dengan Penuh Kesyukuran Menyertai Hasrat Kami</p>
+        <p class="font-serif font-bold text-gray-800 text-base md:text-lg">Azman bin Abdul Rani</p>
+        <p class="text-xs text-rosewood font-serif">&</p>
+        <p class="font-serif font-bold text-gray-800 text-base md:text-lg">Noraini binti Khamis</p>
+        <p class="text-xs text-gray-500 mt-2">Mempersilakan Dato' / Datin / Tuan / Puan / Encik / Cik ke majlis perkahwinan anakanda kami:</p>
+      </div>
+
+      <!-- Nama Pengantin Penuh -->
+      <div class="py-4 space-y-3 bg-softrose/60 rounded-2xl border border-dustypink/40">
+        <div>
+          <h1 class="font-cursive text-4xl md:text-5xl text-rosewood leading-relaxed">Nurul Izzah</h1>
+          <p class="text-xs text-gray-600 font-serif font-medium">( Nurul Izzah binti Azman )</p>
+        </div>
+
+        <p class="text-xs tracking-widest text-sage uppercase font-bold py-1">— DENGAN —</p>
+
+        <div>
+          <h1 class="font-cursive text-4xl md:text-5xl text-rosewood leading-relaxed">Muhammad Fitri</h1>
+          <p class="text-xs text-gray-600 font-serif font-medium">( Muhammad Fitri bin Hashim )</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. TARIKH & COUNTDOWN TIMER -->
+    <section class="glass-card p-6 rounded-3xl text-center space-y-6 glow-effect">
+      <div class="space-y-2">
+        <div class="inline-flex items-center justify-center space-x-2 text-rosewood">
+          <i data-lucide="calendar" class="w-5 h-5"></i>
+          <h2 class="font-serif font-bold text-xl">Tarikh & Masa</h2>
+        </div>
+        <p class="text-2xl font-serif font-bold text-gray-800">Ahad, 30 Ogos 2026</p>
+        <p class="text-sm text-gray-600">14 Safar 1448H</p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 text-left max-w-sm mx-auto text-xs bg-white/70 p-4 rounded-2xl border border-gray-100">
+        <div class="flex items-start space-x-2">
+          <i data-lucide="clock" class="w-4 h-4 text-sage mt-0.5 shrink-0"></i>
+          <div>
+            <span class="font-bold text-gray-700 block">Jam Jamuan:</span>
+            <span class="text-gray-600">11.00 pagi - 4.00 petang</span>
+          </div>
+        </div>
+        <div class="flex items-start space-x-2">
+          <i data-lucide="heart" class="w-4 h-4 text-rosewood mt-0.5 shrink-0"></i>
+          <div>
+            <span class="font-bold text-gray-700 block">Ketibaan Pengantin:</span>
+            <span class="text-gray-600">12.40 tengah hari</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-3 pt-2">
+        <p class="text-xs uppercase tracking-wider text-sage font-semibold">Menghitung Detik Bahagia</p>
+        <div class="grid grid-cols-4 gap-2 max-w-xs mx-auto">
+          <div class="bg-rosewood text-white p-3 rounded-2xl shadow-sm">
+            <span id="days" class="block text-2xl font-bold font-serif">00</span>
+            <span class="text-[10px] uppercase tracking-wider opacity-80">Hari</span>
+          </div>
+          <div class="bg-rosewood text-white p-3 rounded-2xl shadow-sm">
+            <span id="hours" class="block text-2xl font-bold font-serif">00</span>
+            <span class="text-[10px] uppercase tracking-wider opacity-80">Jam</span>
+          </div>
+          <div class="bg-rosewood text-white p-3 rounded-2xl shadow-sm">
+            <span id="minutes" class="block text-2xl font-bold font-serif">00</span>
+            <span class="text-[10px] uppercase tracking-wider opacity-80">Minit</span>
+          </div>
+          <div class="bg-rosewood text-white p-3 rounded-2xl shadow-sm">
+            <span id="seconds" class="block text-2xl font-bold font-serif">00</span>
+            <span class="text-[10px] uppercase tracking-wider opacity-80">Saat</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. LOKASI MAJLIS (DIRECT LINKS MAPS/WAZE) -->
+    <section class="glass-card p-6 rounded-3xl text-center space-y-5 glow-effect">
+      <div class="inline-flex items-center justify-center space-x-2 text-rosewood">
+        <i data-lucide="map-pin" class="w-5 h-5"></i>
+        <h2 class="font-serif font-bold text-xl">Lokasi Majlis</h2>
+      </div>
+
+      <div class="space-y-1">
+        <p class="font-semibold text-gray-800 text-base">Wisma JKKK Felda Chemomoi</p>
+        <p class="text-xs text-gray-600 leading-relaxed">28310 Triang, Pahang Darul Makmur</p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3 justify-center pt-2">
+        <a href="https://maps.google.com/?q=Wisma+JKKK+Felda+Chemomoi+28310+Triang+Pahang" target="_blank" class="inline-flex items-center justify-center space-x-2 bg-white hover:bg-gray-50 text-gray-700 px-5 py-2.5 rounded-xl border border-gray-200 text-xs font-semibold shadow-sm transition">
+          <i data-lucide="map" class="w-4 h-4 text-rose-500"></i>
+          <span>Google Maps</span>
+        </a>
+        <a href="https://waze.com/ul?q=Wisma%20JKKK%20Felda%20Chemomoi" target="_blank" class="inline-flex items-center justify-center space-x-2 bg-white hover:bg-gray-50 text-gray-700 px-5 py-2.5 rounded-xl border border-gray-200 text-xs font-semibold shadow-sm transition">
+          <i data-lucide="navigation" class="w-4 h-4 text-sky-500"></i>
+          <span>Waze Navigation</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 4. HUBUNGI / CONTACT PERSON (DIRECT LINKS WHATSAPP) -->
+    <section class="glass-card p-6 rounded-3xl text-center space-y-4 glow-effect">
+      <div class="inline-flex items-center justify-center space-x-2 text-rosewood">
+        <i data-lucide="phone-call" class="w-5 h-5"></i>
+        <h2 class="font-serif font-bold text-xl">Hubungi Kami</h2>
+      </div>
+      <p class="text-xs text-gray-500">Sila hubungi wakil keluarga untuk sebarang pertanyaan:</p>
+
+      <div class="grid grid-cols-1 gap-2 max-w-md mx-auto pt-1">
+        <div class="flex items-center justify-between bg-white/80 p-3 rounded-2xl border border-gray-100">
+          <div class="text-left">
+            <p class="text-xs font-bold text-gray-800">Azman (Bapa)</p>
+            <p class="text-[11px] text-gray-500">018-5870942</p>
+          </div>
+          <a href="https://wa.me/60185870942?text=Assalamualaikum,%20saya%20ingin%20bertanya%20mengenai%20majlis%20perkahwinan" target="_blank" class="inline-flex items-center space-x-1 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 px-3 py-1.5 rounded-xl text-xs font-medium transition">
+            <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+
+        <div class="flex items-center justify-between bg-white/80 p-3 rounded-2xl border border-gray-100">
+          <div class="text-left">
+            <p class="text-xs font-bold text-gray-800">Noraini (Ibu)</p>
+            <p class="text-[11px] text-gray-500">016-9602341</p>
+          </div>
+          <a href="https://wa.me/60169602341?text=Assalamualaikum,%20saya%20ingin%20bertanya%20mengenai%20majlis%20perkahwinan" target="_blank" class="inline-flex items-center space-x-1 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 px-3 py-1.5 rounded-xl text-xs font-medium transition">
+            <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+
+        <div class="flex items-center justify-between bg-white/80 p-3 rounded-2xl border border-gray-100">
+          <div class="text-left">
+            <p class="text-xs font-bold text-gray-800">Izham (Wakil)</p>
+            <p class="text-[11px] text-gray-500">016-3374576</p>
+          </div>
+          <a href="https://wa.me/60163374576?text=Assalamualaikum,%20saya%20ingin%20bertanya%20mengenai%20majlis%20perkahwinan" target="_blank" class="inline-flex items-center space-x-1 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 px-3 py-1.5 rounded-xl text-xs font-medium transition">
+            <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. RUANG UCAPAN & DOA (DENGAN PERANTI AI) -->
+    <section class="glass-card p-6 rounded-3xl space-y-5 glow-effect">
+      <div class="text-center space-y-1">
+        <div class="inline-flex items-center justify-center space-x-2 text-rosewood">
+          <i data-lucide="sparkles" class="w-5 h-5"></i>
+          <h2 class="font-serif font-bold text-xl">Titipan Ucapan & Doa</h2>
+        </div>
+        <p class="text-xs text-gray-500">Tinggalkan ucapan buat kedua-dua mempelai</p>
+      </div>
+
+      <div class="space-y-3 max-w-md mx-auto text-xs">
+        <div>
+          <label class="block font-semibold text-gray-700 mb-1">Nama Anda</label>
+          <input type="text" id="wisherName" placeholder="Masukkan nama anda" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-rosewood/50 bg-white/90">
+        </div>
+
+        <div>
+          <div class="flex justify-between items-center mb-1">
+            <label class="block font-semibold text-gray-700">Mesej Ucapan</label>
+            <button type="button" onclick="enhanceWithAI()" id="aiBtn" class="inline-flex items-center space-x-1.5 text-xs text-purple-700 bg-purple-50 hover:bg-purple-100 border border-purple-200 px-2.5 py-1 rounded-lg font-medium transition">
+              <i data-lucide="wand-2" class="w-3.5 h-3.5 text-purple-600"></i>
+              <span>✨ Perindah dengan AI</span>
+            </button>
+          </div>
+          <textarea id="wisherMessage" rows="3" placeholder="Tuliskan ucapan ringkas anda di sini (contoh: Selamat pengantin baru semoga bahagia hingga ke jannah)..." class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-rosewood/50 bg-white/90 leading-relaxed"></textarea>
+          <p class="text-[10px] text-gray-400 mt-1 italic">*Taip ucapan ringkas dan tekan butang AI di atas untuk memurnikan ucapan menjadi lebih puitis & penuh doa.</p>
+        </div>
+
+        <button type="button" onclick="addWish()" class="w-full bg-sage hover:bg-sage/90 text-white font-semibold py-3 rounded-xl shadow-md transition flex items-center justify-center space-x-2 text-sm">
+          <i data-lucide="heart" class="w-4 h-4"></i>
+          <span>Hantar Ucapan</span>
+        </button>
+      </div>
+
+      <!-- Senarai Ucapan Tetamu -->
+      <div class="pt-4 border-t border-gray-100">
+        <h3 class="font-serif font-bold text-sm text-gray-800 mb-3 text-center">Ucapan Daripada Tetamu</h3>
+        <div id="wishesContainer" class="space-y-3 max-h-60 overflow-y-auto pr-1">
+          <div class="bg-white/80 p-3.5 rounded-2xl border border-gray-100 text-xs space-y-1">
+            <div class="flex justify-between items-center">
+              <span class="font-bold text-rosewood">Keluarga Hj Abdullah</span>
+              <span class="text-[10px] text-gray-400">Baru sahaja</span>
+            </div>
+            <p class="text-gray-600 italic">"Selamat pengantin baru Izzah & Fitri! Semoga ikatan perkahwinan ini dilimpahi keberkatan, kasih sayang yang berkekalan hingga ke jannah-Nya."</p>
+          </div>
+
+          <div class="bg-white/80 p-3.5 rounded-2xl border border-gray-100 text-xs space-y-1">
+            <div class="flex justify-between items-center">
+              <span class="font-bold text-rosewood">Farah & Rakan-rakan</span>
+              <span class="text-[10px] text-gray-400">1 jam lalu</span>
+            </div>
+            <p class="text-gray-600 italic">"Tahniah Nurul Izzah & Muhammad Fitri! Cantik sangat pasangan ini. Semoga mahligai yang dibina sentiasa disinari kebahagiaan dan diberikan keturunan yang soleh & solehah."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center text-xs text-gray-400 py-4 space-y-1">
+      <p>Walimatulurus Nurul Izzah & Muhammad Fitri</p>
+      <p class="text-[10px]">30 Ogos 2026 • Triang, Pahang</p>
+    </footer>
+
+  </main>
+
+  <script>
+    lucide.createIcons();
+
+    const apiKey = "";
+
+    // 1. COUNTDOWN TIMER
+    function updateCountdown() {
+      const eventDate = new Date("August 30, 2026 11:00:00").getTime();
+      const now = new Date().getTime();
+      const difference = eventDate - now;
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = days < 10 ? '0' + days : days;
+        document.getElementById("hours").innerText = hours < 10 ? '0' + hours : hours;
+        document.getElementById("minutes").innerText = minutes < 10 ? '0' + minutes : minutes;
+        document.getElementById("seconds").innerText = seconds < 10 ? '0' + seconds : seconds;
+      } else {
+        document.getElementById("days").innerText = "00";
+        document.getElementById("hours").innerText = "00";
+        document.getElementById("minutes").innerText = "00";
+        document.getElementById("seconds").innerText = "00";
+      }
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // 2. AI ENHANCER LOGIC (GEMINI API WITH EXPONENTIAL BACKOFF)
+    async function callGeminiApi(promptText) {
+      const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+      const systemPrompt = "Anda ialah pembantu AI perkahwinan Melayu yang pakar dalam bahasa puitis, murni, dan penuh doa. Ubah ucapan tetamu yang ringkas menjadi ucapan perkahwinan Bahasa Melayu yang sangat indah, mesra, puitis dan mengandungi doa keberkatan untuk pengantin (Nurul Izzah & Muhammad Fitri). Kekalkan panjang ucapan antara 2 hingga 4 ayat. Pulangkan teks ucapan sahaja tanpa tanda petik atau huraian tambahan.";
+
+      const payload = {
+        contents: [{ parts: [{ text: promptText }] }],
+        systemInstruction: { parts: [{ text: systemPrompt }] }
+      };
+
+      const delays = [1000, 2000, 4000, 8000, 16000];
+      for (let attempt = 0; attempt <= 5; attempt++) {
+        try {
+          const response = await fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+
+          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+          const data = await response.json();
+          const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+          if (text) return text.trim();
+        } catch (error) {
+          if (attempt === 5) throw error;
+          await new Promise(resolve => setTimeout(resolve, delays[attempt]));
+        }
+      }
+    }
+
+    async function enhanceWithAI() {
+      const messageTextarea = document.getElementById("wisherMessage");
+      const aiBtn = document.getElementById("aiBtn");
+      const currentText = messageTextarea.value.trim();
+
+      if (!currentText) {
+        alert("Sila taip ucapan ringkas terlebih dahulu sebelum menggunakan peranti AI.");
+        return;
+      }
+
+      const originalBtnContent = aiBtn.innerHTML;
+      aiBtn.disabled = true;
+      aiBtn.innerHTML = `<i data-lucide="loader-2" class="w-3.5 h-3.5 animate-spin"></i> <span>Memurni Ucapan...</span>`;
+      lucide.createIcons();
+
+      try {
+        const enhancedText = await callGeminiApi(currentText);
+        messageTextarea.value = enhancedText;
+      } catch (err) {
+        alert("Maaf, gagal memurnikan ucapan secara automatik. Sila cuba lagi sebentar lagi.");
+      } finally {
+        aiBtn.disabled = false;
+        aiBtn.innerHTML = originalBtnContent;
+        lucide.createIcons();
+      }
+    }
+
+    // 3. TAMBAH UCAPAN TETAMU
+    function addWish() {
+      const nameInput = document.getElementById("wisherName");
+      const messageInput = document.getElementById("wisherMessage");
+      const container = document.getElementById("wishesContainer");
+
+      const name = nameInput.value.trim();
+      const message = messageInput.value.trim();
+
+      if (!name || !message) {
+        alert("Sila isi nama dan mesej ucapan anda.");
+        return;
+      }
+
+      const wishCard = document.createElement("div");
+      wishCard.className = "bg-white/80 p-3.5 rounded-2xl border border-gray-100 text-xs space-y-1 transform transition-all duration-300 scale-95 opacity-0";
+      wishCard.innerHTML = `
+        <div class="flex justify-between items-center">
+          <span class="font-bold text-rosewood">${escapeHtml(name)}</span>
+          <span class="text-[10px] text-gray-400">Baru sahaja</span>
+        </div>
+        <p class="text-gray-600 italic">"${escapeHtml(message)}"</p>
+      `;
+
+      container.prepend(wishCard);
+
+      setTimeout(() => {
+        wishCard.classList.remove("scale-95", "opacity-0");
+      }, 50);
+
+      nameInput.value = "";
+      messageInput.value = "";
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.innerText = text;
+      return div.innerHTML;
+    }
+  </script>
+</body>
+</html>
+
+```
