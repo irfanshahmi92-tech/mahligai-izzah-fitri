@@ -6,25 +6,25 @@
   <title>Walimatulurus Nurul Izzah & Muhammad Fitri</title>
 
   <!-- Tailwind CSS CDN -->
-  <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts -->
-  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
-  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-  <link href="[https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap)" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Lucide Icons -->
-  <script src="[https://unpkg.com/lucide@latest](https://unpkg.com/lucide@latest)"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
 
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            rosewood: '#8E5A5A',
-            softrose: '#FDF6F6',
-            sage: '#8A9A86',
-            dustypink: '#E8C5C8',
-            warmgold: '#D4AF37',
-            cream: '#FAF8F5'
+            rosewood: '#A855F7', // Warna lebih ceria (Purple Rose/Berry)
+            softrose: '#FFF0F5',
+            sage: '#10B981',
+            dustypink: '#F472B6',
+            warmgold: '#F59E0B',
+            cream: '#FFFBFE'
           },
           fontFamily: {
             cursive: ['Alex Brush', 'cursive'],
@@ -39,8 +39,8 @@
   <style>
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #FAF8F5;
-      color: #4A4A4A;
+      background: linear-gradient(135deg, #fff5f7 0%, #f0fdf4 50%, #faf5ff 100%);
+      color: #374151;
       overflow-x: hidden;
     }
 
@@ -48,75 +48,83 @@
     .font-serif { font-family: 'Playfair Display', serif; }
 
     .glass-card {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(232, 197, 200, 0.3);
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(244, 114, 182, 0.25);
     }
 
     .glow-effect {
-      box-shadow: 0 10px 30px -10px rgba(142, 90, 90, 0.15);
+      box-shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.15), 0 8px 10px -6px rgba(16, 185, 129, 0.1);
     }
 
-    .bg-floral-pattern {
-      background-image: radial-gradient(#E8C5C8 0.75px, transparent 0.75px), radial-gradient(#E8C5C8 0.75px, #FAF8F5 0.75px);
-      background-size: 30px 30px;
-      background-position: 0 0, 15px 15px;
-      opacity: 0.4;
+    /* Animasi Kelopak Bunga Gugur */
+    .petal {
+      position: fixed;
+      top: -10%;
+      user-select: none;
+      pointer-events: none;
+      z-index: 50;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        opacity: 1;
+        top: -10%;
+        transform: translateX(0) rotate(0deg);
+      }
+      100% {
+        opacity: 0.2;
+        top: 105%;
+        transform: translateX(100px) rotate(360deg);
+      }
     }
   </style>
 </head>
 <body class="relative min-h-screen pb-12">
 
-  <!-- Latar Belakang Corak Soft -->
-  <div class="fixed inset-0 bg-floral-pattern -z-10 pointer-events-none"></div>
-
-  <!-- Hiasan Bunga -->
-  <div class="fixed top-0 left-0 w-32 md:w-48 opacity-30 pointer-events-none -z-10 transform -scale-x-100">
-    <svg viewBox="0 0 200 200" fill="none" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)">
-      <path d="M100 0C120 40 160 80 200 100C160 120 120 160 100 200C80 160 40 120 0 100C40 80 80 40 100 0Z" fill="#E8C5C8"/>
-    </svg>
-  </div>
-  <div class="fixed bottom-0 right-0 w-32 md:w-48 opacity-30 pointer-events-none -z-10">
-    <svg viewBox="0 0 200 200" fill="none" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)">
-      <path d="M100 0C120 40 160 80 200 100C160 120 120 160 100 200C80 160 40 120 0 100C40 80 80 40 100 0Z" fill="#8A9A86"/>
-    </svg>
-  </div>
+  <!-- Bekas untuk Animasi Kelopak Bunga -->
+  <div id="petal-container" class="fixed inset-0 pointer-events-none z-50"></div>
 
   <main class="max-w-xl mx-auto px-4 pt-8 space-y-8">
 
     <!-- 1. UTAMA & TAJUK -->
     <section class="text-center space-y-6 glass-card p-8 rounded-3xl glow-effect relative overflow-hidden">
-      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-rosewood to-transparent opacity-40"></div>
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1.5 bg-gradient-to-r from-pink-400 via-purple-500 to-emerald-400 rounded-full"></div>
 
-      <div class="flex justify-center text-rosewood mb-2">
-        <i data-lucide="flower-2" class="w-8 h-8 animate-pulse"></i>
+      <div class="flex justify-center text-pink-500 mb-2">
+        <i data-lucide="sparkles" class="w-9 h-9 animate-bounce"></i>
       </div>
 
       <div class="space-y-2">
-        <p class="text-sm tracking-widest uppercase text-sage font-semibold">Undangan Walimatulurus</p>
+        <p class="text-xs tracking-widest uppercase font-bold text-emerald-600 bg-emerald-50 inline-block px-3 py-1 rounded-full border border-emerald-200">Undangan Walimatulurus</p>
         <p class="text-xs text-gray-500 font-serif italic">"Assalamualaikum WBT & Salam Sejahtera"</p>
       </div>
 
       <div class="py-2">
         <p class="text-xs text-gray-600 mb-1">Dengan Penuh Kesyukuran Menyertai Hasrat Kami</p>
         <p class="font-serif font-bold text-gray-800 text-base md:text-lg">Azman bin Abdul Rani</p>
-        <p class="text-xs text-rosewood font-serif">&</p>
+        <p class="text-xs text-pink-500 font-serif font-bold">&</p>
         <p class="font-serif font-bold text-gray-800 text-base md:text-lg">Noraini binti Khamis</p>
         <p class="text-xs text-gray-500 mt-2">Mempersilakan Dato' / Datin / Tuan / Puan / Encik / Cik ke majlis perkahwinan anakanda kami:</p>
       </div>
 
       <!-- Nama Pengantin Penuh -->
-      <div class="py-4 space-y-3 bg-softrose/60 rounded-2xl border border-dustypink/40">
+      <div class="py-5 space-y-3 bg-gradient-to-br from-pink-50 via-purple-50 to-emerald-50 rounded-2xl border border-pink-200/60 shadow-inner">
         <div>
-          <h1 class="font-cursive text-4xl md:text-5xl text-rosewood leading-relaxed">Nurul Izzah</h1>
+          <h1 class="font-cursive text-5xl md:text-6xl text-pink-600 leading-relaxed drop-shadow-sm">Nurul Izzah</h1>
           <p class="text-xs text-gray-600 font-serif font-medium">( Nurul Izzah binti Azman )</p>
         </div>
 
-        <p class="text-xs tracking-widest text-sage uppercase font-bold py-1">— DENGAN —</p>
+        <div class="flex items-center justify-center space-x-2">
+          <span class="h-px w-8 bg-pink-300"></span>
+          <span class="text-xs tracking-widest text-emerald-600 uppercase font-bold">DENGAN</span>
+          <span class="h-px w-8 bg-pink-300"></span>
+        </div>
 
         <div>
-          <h1 class="font-cursive text-4xl md:text-5xl text-rosewood leading-relaxed">Muhammad Fitri</h1>
+          <h1 class="font-cursive text-5xl md:text-6xl text-purple-600 leading-relaxed drop-shadow-sm">Muhammad Fitri</h1>
           <p class="text-xs text-gray-600 font-serif font-medium">( Muhammad Fitri bin Hashim )</p>
         </div>
       </div>
@@ -125,24 +133,24 @@
     <!-- 2. TARIKH & COUNTDOWN TIMER -->
     <section class="glass-card p-6 rounded-3xl text-center space-y-6 glow-effect">
       <div class="space-y-2">
-        <div class="inline-flex items-center justify-center space-x-2 text-rosewood">
+        <div class="inline-flex items-center justify-center space-x-2 text-pink-600 bg-pink-50 px-4 py-1.5 rounded-full border border-pink-100">
           <i data-lucide="calendar" class="w-5 h-5"></i>
-          <h2 class="font-serif font-bold text-xl">Tarikh & Masa</h2>
+          <h2 class="font-serif font-bold text-lg">Tarikh & Masa</h2>
         </div>
         <p class="text-2xl font-serif font-bold text-gray-800">Ahad, 30 Ogos 2026</p>
-        <p class="text-sm text-gray-600">14 Safar 1448H</p>
+        <p class="text-xs font-semibold text-emerald-600">14 Safar 1448H</p>
       </div>
 
-      <div class="grid grid-cols-2 gap-3 text-left max-w-sm mx-auto text-xs bg-white/70 p-4 rounded-2xl border border-gray-100">
+      <div class="grid grid-cols-2 gap-3 text-left max-w-sm mx-auto text-xs bg-white/90 p-4 rounded-2xl border border-pink-100 shadow-sm">
         <div class="flex items-start space-x-2">
-          <i data-lucide="clock" class="w-4 h-4 text-sage mt-0.5 shrink-0"></i>
+          <i data-lucide="clock" class="w-4 h-4 text-emerald-500 mt-0.5 shrink-0"></i>
           <div>
             <span class="font-bold text-gray-700 block">Jam Jamuan:</span>
             <span class="text-gray-600">11.00 pagi - 4.00 petang</span>
           </div>
         </div>
         <div class="flex items-start space-x-2">
-          <i data-lucide="heart" class="w-4 h-4 text-rosewood mt-0.5 shrink-0"></i>
+          <i data-lucide="heart" class="w-4 h-4 text-pink-500 mt-0.5 shrink-0"></i>
           <div>
             <span class="font-bold text-gray-700 block">Ketibaan Pengantin:</span>
             <span class="text-gray-600">12.40 tengah hari</span>
@@ -151,89 +159,88 @@
       </div>
 
       <div class="space-y-3 pt-2">
-        <p class="text-xs uppercase tracking-wider text-sage font-semibold">Menghitung Detik Bahagia</p>
+        <p class="text-xs uppercase tracking-wider text-emerald-600 font-bold">Menghitung Detik Bahagia</p>
         <div class="grid grid-cols-4 gap-2 max-w-xs mx-auto">
-          <div class="bg-rosewood text-white p-3 rounded-2xl shadow-sm">
+          <div class="bg-gradient-to-b from-pink-500 to-rose-600 text-white p-3 rounded-2xl shadow-md">
             <span id="days" class="block text-2xl font-bold font-serif">00</span>
-            <span class="text-[10px] uppercase tracking-wider opacity-80">Hari</span>
+            <span class="text-[10px] uppercase tracking-wider opacity-90">Hari</span>
           </div>
-          <div class="bg-rosewood text-white p-3 rounded-2xl shadow-sm">
+          <div class="bg-gradient-to-b from-pink-500 to-rose-600 text-white p-3 rounded-2xl shadow-md">
             <span id="hours" class="block text-2xl font-bold font-serif">00</span>
-            <span class="text-[10px] uppercase tracking-wider opacity-80">Jam</span>
+            <span class="text-[10px] uppercase tracking-wider opacity-90">Jam</span>
           </div>
-          <div class="bg-rosewood text-white p-3 rounded-2xl shadow-sm">
+          <div class="bg-gradient-to-b from-pink-500 to-rose-600 text-white p-3 rounded-2xl shadow-md">
             <span id="minutes" class="block text-2xl font-bold font-serif">00</span>
-            <span class="text-[10px] uppercase tracking-wider opacity-80">Minit</span>
+            <span class="text-[10px] uppercase tracking-wider opacity-90">Minit</span>
           </div>
-          <div class="bg-rosewood text-white p-3 rounded-2xl shadow-sm">
+          <div class="bg-gradient-to-b from-pink-500 to-rose-600 text-white p-3 rounded-2xl shadow-md">
             <span id="seconds" class="block text-2xl font-bold font-serif">00</span>
-            <span class="text-[10px] uppercase tracking-wider opacity-80">Saat</span>
+            <span class="text-[10px] uppercase tracking-wider opacity-90">Saat</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. LOKASI MAJLIS (DIRECT LINKS MAPS/WAZE) -->
+    <!-- 3. LOKASI MAJLIS -->
     <section class="glass-card p-6 rounded-3xl text-center space-y-5 glow-effect">
-      <div class="inline-flex items-center justify-center space-x-2 text-rosewood">
+      <div class="inline-flex items-center justify-center space-x-2 text-emerald-600 bg-emerald-50 px-4 py-1.5 rounded-full border border-emerald-100">
         <i data-lucide="map-pin" class="w-5 h-5"></i>
-        <h2 class="font-serif font-bold text-xl">Lokasi Majlis</h2>
+        <h2 class="font-serif font-bold text-lg">Lokasi Majlis</h2>
       </div>
 
       <div class="space-y-1">
-        <p class="font-semibold text-gray-800 text-base">Wisma JKKK Felda Chemomoi</p>
+        <p class="font-bold text-gray-800 text-base">Wisma JKKK Felda Chemomoi</p>
         <p class="text-xs text-gray-600 leading-relaxed">28310 Triang, Pahang Darul Makmur</p>
       </div>
 
       <div class="flex flex-col sm:flex-row gap-3 justify-center pt-2">
-        <a href="[https://maps.google.com/?q=Wisma+JKKK+Felda+Chemomoi+28310+Triang+Pahang](https://maps.google.com/?q=Wisma+JKKK+Felda+Chemomoi+28310+Triang+Pahang)" target="_blank" class="inline-flex items-center justify-center space-x-2 bg-white hover:bg-gray-50 text-gray-700 px-5 py-2.5 rounded-xl border border-gray-200 text-xs font-semibold shadow-sm transition">
-          <i data-lucide="map" class="w-4 h-4 text-rose-500"></i>
+        <a href="https://maps.google.com/?q=Wisma+JKKK+Felda+Chemomoi+28310+Triang+Pahang" target="_blank" class="inline-flex items-center justify-center space-x-2 bg-white hover:bg-pink-50 text-gray-700 px-5 py-2.5 rounded-xl border border-pink-200 text-xs font-bold shadow-sm transition">
+          <i data-lucide="map" class="w-4 h-4 text-pink-500"></i>
           <span>Google Maps</span>
         </a>
-        <a href="[https://waze.com/ul?q=Wisma%20JKKK%20Felda%20Chemomoi](https://waze.com/ul?q=Wisma%20JKKK%20Felda%20Chemomoi)" target="_blank" class="inline-flex items-center justify-center space-x-2 bg-white hover:bg-gray-50 text-gray-700 px-5 py-2.5 rounded-xl border border-gray-200 text-xs font-semibold shadow-sm transition">
+        <a href="https://waze.com/ul?q=Wisma%20JKKK%20Felda%20Chemomoi" target="_blank" class="inline-flex items-center justify-center space-x-2 bg-white hover:bg-sky-50 text-gray-700 px-5 py-2.5 rounded-xl border border-sky-200 text-xs font-bold shadow-sm transition">
           <i data-lucide="navigation" class="w-4 h-4 text-sky-500"></i>
           <span>Waze Navigation</span>
         </a>
       </div>
     </section>
 
-    <!-- 4. HUBUNGI / CONTACT PERSON (DIRECT LINKS WHATSAPP) -->
+    <!-- 4. HUBUNGI / CONTACT PERSON -->
     <section class="glass-card p-6 rounded-3xl text-center space-y-4 glow-effect">
-      <div class="inline-flex items-center justify-center space-x-2 text-rosewood">
+      <div class="inline-flex items-center justify-center space-x-2 text-purple-600 bg-purple-50 px-4 py-1.5 rounded-full border border-purple-100">
         <i data-lucide="phone-call" class="w-5 h-5"></i>
-        <h2 class="font-serif font-bold text-xl">Hubungi Kami</h2>
+        <h2 class="font-serif font-bold text-lg">Hubungi Kami</h2>
       </div>
-      <p class="text-xs text-gray-500">Sila hubungi wakil keluarga untuk sebarang pertanyaan:</p>
 
       <div class="grid grid-cols-1 gap-2 max-w-md mx-auto pt-1">
-        <div class="flex items-center justify-between bg-white/80 p-3 rounded-2xl border border-gray-100">
+        <div class="flex items-center justify-between bg-white/90 p-3 rounded-2xl border border-pink-100 shadow-sm">
           <div class="text-left">
             <p class="text-xs font-bold text-gray-800">Azman (Bapa)</p>
             <p class="text-[11px] text-gray-500">018-5870942</p>
           </div>
-          <a href="[https://wa.me/60185870942?text=Assalamualaikum,%20saya%20ingin%20bertanya%20mengenai%20majlis%20perkahwinan](https://wa.me/60185870942?text=Assalamualaikum,%20saya%20ingin%20bertanya%20mengenai%20majlis%20perkahwinan)" target="_blank" class="inline-flex items-center space-x-1 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 px-3 py-1.5 rounded-xl text-xs font-medium transition">
+          <a href="https://wa.me/60185870942?text=Assalamualaikum,%20saya%20ingin%20bertanya%20mengenai%20majlis%20perkahwinan" target="_blank" class="inline-flex items-center space-x-1 bg-emerald-50 text-emerald-600 hover:bg-emerald-100 px-3 py-1.5 rounded-xl text-xs font-bold border border-emerald-200 transition">
             <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
             <span>WhatsApp</span>
           </a>
         </div>
 
-        <div class="flex items-center justify-between bg-white/80 p-3 rounded-2xl border border-gray-100">
+        <div class="flex items-center justify-between bg-white/90 p-3 rounded-2xl border border-pink-100 shadow-sm">
           <div class="text-left">
             <p class="text-xs font-bold text-gray-800">Noraini (Ibu)</p>
             <p class="text-[11px] text-gray-500">016-9602341</p>
           </div>
-          <a href="[https://wa.me/60169602341?text=Assalamualaikum,%20saya%20ingin%20bertanya%20mengenai%20majlis%20perkahwinan](https://wa.me/60169602341?text=Assalamualaikum,%20saya%20ingin%20bertanya%20mengenai%20majlis%20perkahwinan)" target="_blank" class="inline-flex items-center space-x-1 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 px-3 py-1.5 rounded-xl text-xs font-medium transition">
+          <a href="https://wa.me/60169602341?text=Assalamualaikum,%20saya%20ingin%20bertanya%20mengenai%20majlis%20perkahwinan" target="_blank" class="inline-flex items-center space-x-1 bg-emerald-50 text-emerald-600 hover:bg-emerald-100 px-3 py-1.5 rounded-xl text-xs font-bold border border-emerald-200 transition">
             <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
             <span>WhatsApp</span>
           </a>
         </div>
 
-        <div class="flex items-center justify-between bg-white/80 p-3 rounded-2xl border border-gray-100">
+        <div class="flex items-center justify-between bg-white/90 p-3 rounded-2xl border border-pink-100 shadow-sm">
           <div class="text-left">
             <p class="text-xs font-bold text-gray-800">Izham (Wakil)</p>
             <p class="text-[11px] text-gray-500">016-3374576</p>
           </div>
-          <a href="[https://wa.me/60163374576?text=Assalamualaikum,%20saya%20ingin%20bertanya%20mengenai%20majlis%20perkahwinan](https://wa.me/60163374576?text=Assalamualaikum,%20saya%20ingin%20bertanya%20mengenai%20majlis%20perkahwinan)" target="_blank" class="inline-flex items-center space-x-1 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 px-3 py-1.5 rounded-xl text-xs font-medium transition">
+          <a href="https://wa.me/60163374576?text=Assalamualaikum,%20saya%20ingin%20bertanya%20mengenai%20majlis%20perkahwinan" target="_blank" class="inline-flex items-center space-x-1 bg-emerald-50 text-emerald-600 hover:bg-emerald-100 px-3 py-1.5 rounded-xl text-xs font-bold border border-emerald-200 transition">
             <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
             <span>WhatsApp</span>
           </a>
@@ -244,55 +251,45 @@
     <!-- 5. RUANG UCAPAN & DOA -->
     <section class="glass-card p-6 rounded-3xl space-y-5 glow-effect">
       <div class="text-center space-y-1">
-        <div class="inline-flex items-center justify-center space-x-2 text-rosewood">
-          <i data-lucide="sparkles" class="w-5 h-5"></i>
-          <h2 class="font-serif font-bold text-xl">Titipan Ucapan & Doa</h2>
+        <div class="inline-flex items-center justify-center space-x-2 text-pink-600 bg-pink-50 px-4 py-1.5 rounded-full border border-pink-100">
+          <i data-lucide="heart-handshake" class="w-5 h-5"></i>
+          <h2 class="font-serif font-bold text-lg">Titipan Ucapan & Doa</h2>
         </div>
-        <p class="text-xs text-gray-500">Tinggalkan ucapan buat kedua-dua mempelai</p>
       </div>
 
       <div class="space-y-3 max-w-md mx-auto text-xs">
         <div>
-          <label class="block font-semibold text-gray-700 mb-1">Nama Anda</label>
-          <input type="text" id="wisherName" placeholder="Masukkan nama anda" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-rosewood/50 bg-white/90">
+          <label class="block font-bold text-gray-700 mb-1">Nama Anda</label>
+          <input type="text" id="wisherName" placeholder="Masukkan nama anda" class="w-full px-4 py-2.5 rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-400 bg-white">
         </div>
 
         <div>
           <div class="flex justify-between items-center mb-1">
-            <label class="block font-semibold text-gray-700">Mesej Ucapan</label>
-            <button type="button" onclick="enhanceWithAI()" id="aiBtn" class="inline-flex items-center space-x-1.5 text-xs text-purple-700 bg-purple-50 hover:bg-purple-100 border border-purple-200 px-2.5 py-1 rounded-lg font-medium transition">
+            <label class="block font-bold text-gray-700">Mesej Ucapan</label>
+            <button type="button" onclick="enhanceWithAI()" id="aiBtn" class="inline-flex items-center space-x-1.5 text-xs text-purple-700 bg-purple-100 hover:bg-purple-200 border border-purple-300 px-3 py-1 rounded-lg font-bold transition shadow-sm">
               <i data-lucide="wand-2" class="w-3.5 h-3.5 text-purple-600"></i>
               <span>✨ Perindah dengan AI</span>
             </button>
           </div>
-          <textarea id="wisherMessage" rows="3" placeholder="Tuliskan ucapan ringkas anda di sini..." class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-rosewood/50 bg-white/90 leading-relaxed"></textarea>
-          <p class="text-[10px] text-gray-400 mt-1 italic">*Taip ucapan ringkas dan tekan butang AI di atas untuk memurnikan ucapan menjadi lebih puitis & penuh doa.</p>
+          <textarea id="wisherMessage" rows="3" placeholder="Tuliskan ucapan ringkas anda di sini..." class="w-full px-4 py-3 rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-400 bg-white leading-relaxed"></textarea>
         </div>
 
-        <button type="button" onclick="addWish()" class="w-full bg-sage hover:bg-sage/90 text-white font-semibold py-3 rounded-xl shadow-md transition flex items-center justify-center space-x-2 text-sm">
-          <i data-lucide="heart" class="w-4 h-4"></i>
+        <button type="button" onclick="addWish()" class="w-full bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-bold py-3 rounded-xl shadow-md transition flex items-center justify-center space-x-2 text-sm">
+          <i data-lucide="send" class="w-4 h-4"></i>
           <span>Hantar Ucapan</span>
         </button>
       </div>
 
       <!-- Senarai Ucapan Tetamu -->
-      <div class="pt-4 border-t border-gray-100">
+      <div class="pt-4 border-t border-pink-100">
         <h3 class="font-serif font-bold text-sm text-gray-800 mb-3 text-center">Ucapan Daripada Tetamu</h3>
         <div id="wishesContainer" class="space-y-3 max-h-60 overflow-y-auto pr-1">
-          <div class="bg-white/80 p-3.5 rounded-2xl border border-gray-100 text-xs space-y-1">
+          <div class="bg-white/90 p-3.5 rounded-2xl border border-pink-100 text-xs space-y-1 shadow-sm">
             <div class="flex justify-between items-center">
-              <span class="font-bold text-rosewood">Keluarga Hj Abdullah</span>
+              <span class="font-bold text-pink-600">Keluarga Hj Abdullah</span>
               <span class="text-[10px] text-gray-400">Baru sahaja</span>
             </div>
-            <p class="text-gray-600 italic">"Selamat pengantin baru Izzah & Fitri! Semoga ikatan perkahwinan ini dilimpahi keberkatan, kasih sayang yang berkekalan hingga ke jannah-Nya."</p>
-          </div>
-
-          <div class="bg-white/80 p-3.5 rounded-2xl border border-gray-100 text-xs space-y-1">
-            <div class="flex justify-between items-center">
-              <span class="font-bold text-rosewood">Farah & Rakan-rakan</span>
-              <span class="text-[10px] text-gray-400">1 jam lalu</span>
-            </div>
-            <p class="text-gray-600 italic">"Tahniah Nurul Izzah & Muhammad Fitri! Cantik sangat pasangan ini. Semoga mahligai yang dibina sentiasa disinari kebahagiaan dan diberikan keturunan yang soleh & solehah."</p>
+            <p class="text-gray-600 italic">"Selamat pengantin baru Izzah & Fitri! Semoga ikatan perkahwinan ini dilimpahi keberkatan & kasih sayang hingga ke jannah."</p>
           </div>
         </div>
       </div>
@@ -300,7 +297,7 @@
 
     <!-- FOOTER -->
     <footer class="text-center text-xs text-gray-400 py-4 space-y-1">
-      <p>Walimatulurus Nurul Izzah & Muhammad Fitri</p>
+      <p class="font-semibold text-pink-500">Walimatulurus Nurul Izzah & Muhammad Fitri</p>
       <p class="text-[10px]">30 Ogos 2026 • Triang, Pahang</p>
     </footer>
 
@@ -309,7 +306,25 @@
   <script>
     lucide.createIcons();
 
-    // 1. COUNTDOWN TIMER
+    // ANIMASI KELOPAK BUNGA GUGUR
+    function createPetals() {
+      const container = document.getElementById('petal-container');
+      const petalIcons = ['🌸', '🌺', '✨', '🍃'];
+      
+      for (let i = 0; i < 15; i++) {
+        const petal = document.createElement('div');
+        petal.className = 'petal';
+        petal.innerText = petalIcons[Math.floor(Math.random() * petalIcons.length)];
+        petal.style.left = Math.random() * 100 + 'vw';
+        petal.style.animationDuration = (Math.random() * 5 + 5) + 's';
+        petal.style.animationDelay = Math.random() * 5 + 's';
+        petal.style.fontSize = (Math.random() * 10 + 12) + 'px';
+        container.appendChild(petal);
+      }
+    }
+    createPetals();
+
+    // COUNTDOWN TIMER
     function updateCountdown() {
       const eventDate = new Date("August 30, 2026 11:00:00").getTime();
       const now = new Date().getTime();
@@ -325,17 +340,12 @@
         document.getElementById("hours").innerText = hours < 10 ? '0' + hours : hours;
         document.getElementById("minutes").innerText = minutes < 10 ? '0' + minutes : minutes;
         document.getElementById("seconds").innerText = seconds < 10 ? '0' + seconds : seconds;
-      } else {
-        document.getElementById("days").innerText = "00";
-        document.getElementById("hours").innerText = "00";
-        document.getElementById("minutes").innerText = "00";
-        document.getElementById("seconds").innerText = "00";
       }
     }
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // 2. AI ENHANCER LOGIC (OFFLINE/LOCAL TEMPLATE - GUARANTEED WORKS)
+    // AI ENHANCER LOGIC
     function enhanceWithAI() {
       const messageTextarea = document.getElementById("wisherMessage");
       const aiBtn = document.getElementById("aiBtn");
@@ -348,27 +358,25 @@
 
       const originalBtnContent = aiBtn.innerHTML;
       aiBtn.disabled = true;
-      aiBtn.innerHTML = `<i data-lucide="loader-2" class="w-3.5 h-3.5 animate-spin"></i> <span>Memurni Ucapan...</span>`;
+      aiBtn.innerHTML = `<i data-lucide="loader-2" class="w-3.5 h-3.5 animate-spin"></i> <span>Memurni...</span>`;
       lucide.createIcons();
 
       const poeticTemplates = [
         `Selamat pengantin baru buat Nurul Izzah & Muhammad Fitri. Semoga bahtera perkahwinan yang dibina sentiasa dilimpahi kasih sayang, keberkatan, dan kebahagiaan hingga ke jannah-Nya. Aamiin.`,
-        `Barakallahulakuma wa baraka 'alaikuma wa jama'a bainakuma fii khair. Tahniah Nurul Izzah & Muhammad Fitri! Moga ikatan suci ini disinari mawaddah, warahmah, dan diberikan keturunan yang soleh & solehah.`,
-        `Tahniah Nurul Izzah & Muhammad Fitri atas penyatuan dua jiwa ini. Semoga setiap langkah kehidupan berpasangan ini sentiasa dirahmati, diharmoni, dan kekal bahagia selamanya.`,
-        `Selamat menempuh alam rumah tangga buat Nurul Izzah & Muhammad Fitri. Moga cinta yang dibina sentiasa mekar, saling melengkapi, dan dilindungi kebaikan dunia dan akhirat.`
+        `Barakallahulakuma wa baraka 'alaikuma wa jama'a bainakuma fii khair. Tahniah Nurul Izzah & Muhammad Fitri! Moga ikatan suci ini disinari mawaddah & warahmah.`,
+        `Tahniah Nurul Izzah & Muhammad Fitri atas penyatuan dua jiwa ini. Semoga setiap langkah kehidupan berpasangan ini sentiasa dirahmati dan kekal bahagia selamanya.`
       ];
 
       setTimeout(() => {
         const randomIndex = Math.floor(Math.random() * poeticTemplates.length);
         messageTextarea.value = poeticTemplates[randomIndex];
-        
         aiBtn.disabled = false;
         aiBtn.innerHTML = originalBtnContent;
         lucide.createIcons();
       }, 600);
     }
 
-    // 3. TAMBAH UCAPAN TETAMU
+    // TAMBAH UCAPAN
     function addWish() {
       const nameInput = document.getElementById("wisherName");
       const messageInput = document.getElementById("wisherMessage");
@@ -383,10 +391,10 @@
       }
 
       const wishCard = document.createElement("div");
-      wishCard.className = "bg-white/80 p-3.5 rounded-2xl border border-gray-100 text-xs space-y-1 transform transition-all duration-300 scale-95 opacity-0";
+      wishCard.className = "bg-white/90 p-3.5 rounded-2xl border border-pink-100 text-xs space-y-1 shadow-sm transform transition-all duration-300 scale-95 opacity-0";
       wishCard.innerHTML = `
         <div class="flex justify-between items-center">
-          <span class="font-bold text-rosewood">${escapeHtml(name)}</span>
+          <span class="font-bold text-pink-600">${escapeHtml(name)}</span>
           <span class="text-[10px] text-gray-400">Baru sahaja</span>
         </div>
         <p class="text-gray-600 italic">"${escapeHtml(message)}"</p>
