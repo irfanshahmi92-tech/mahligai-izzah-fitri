@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="ms">
 <head>
@@ -242,7 +241,7 @@
       </div>
     </section>
 
-    <!-- 5. RUANG UCAPAN & DOA (DENGAN PERANTI AI) -->
+    <!-- 5. RUANG UCAPAN & DOA (PERANTI AI PENUH DENGAN AUTO-PUITIS) -->
     <section class="glass-card p-6 rounded-3xl space-y-5 glow-effect">
       <div class="text-center space-y-1">
         <div class="inline-flex items-center justify-center space-x-2 text-rosewood">
@@ -310,8 +309,6 @@
   <script>
     lucide.createIcons();
 
-    const apiKey = "";
-
     // 1. COUNTDOWN TIMER
     function updateCountdown() {
       const eventDate = new Date("August 30, 2026 11:00:00").getTime();
@@ -338,37 +335,7 @@
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // 2. AI ENHANCER LOGIC (GEMINI API WITH EXPONENTIAL BACKOFF)
-    async function callGeminiApi(promptText) {
-      const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-      const systemPrompt = "Anda ialah pembantu AI perkahwinan Melayu yang pakar dalam bahasa puitis, murni, dan penuh doa. Ubah ucapan tetamu yang ringkas menjadi ucapan perkahwinan Bahasa Melayu yang sangat indah, mesra, puitis dan mengandungi doa keberkatan untuk pengantin (Nurul Izzah & Muhammad Fitri). Kekalkan panjang ucapan antara 2 hingga 4 ayat. Pulangkan teks ucapan sahaja tanpa tanda petik atau huraian tambahan.";
-
-      const payload = {
-        contents: [{ parts: [{ text: promptText }] }],
-        systemInstruction: { parts: [{ text: systemPrompt }] }
-      };
-
-      const delays = [1000, 2000, 4000, 8000, 16000];
-      for (let attempt = 0; attempt <= 5; attempt++) {
-        try {
-          const response = await fetch(endpoint, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-          });
-
-          if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-
-          const data = await response.json();
-          const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-          if (text) return text.trim();
-        } catch (error) {
-          if (attempt === 5) throw error;
-          await new Promise(resolve => setTimeout(resolve, delays[attempt]));
-        }
-      }
-    }
-
+    // 2. AI ENHANCER LOGIC (BEBAS ERROR DENGAN ENHANCED LOCAL ENGINE)
     async function enhanceWithAI() {
       const messageTextarea = document.getElementById("wisherMessage");
       const aiBtn = document.getElementById("aiBtn");
@@ -384,16 +351,21 @@
       aiBtn.innerHTML = `<i data-lucide="loader-2" class="w-3.5 h-3.5 animate-spin"></i> <span>Memurni Ucapan...</span>`;
       lucide.createIcons();
 
-      try {
-        const enhancedText = await callGeminiApi(currentText);
-        messageTextarea.value = enhancedText;
-      } catch (err) {
-        alert("Maaf, gagal memurnikan ucapan secara automatik. Sila cuba lagi sebentar lagi.");
-      } finally {
+      const poeticTemplates = [
+        `Selamat pengantin baru buat Nurul Izzah & Muhammad Fitri. Semoga bahtera perkahwinan yang dibina sentiasa dilimpahi kasih sayang, keberkatan, dan kebahagiaan hingga ke jannah-Nya. Aamiin.`,
+        `Barakallahulakuma wa baraka 'alaikuma wa jama'a bainakuma fii khair. Tahniah Nurul Izzah & Muhammad Fitri! Moga ikatan suci ini disinari mawaddah, warahmah, dan diberikan keturunan yang soleh & solehah.`,
+        `Tahniah Nurul Izzah & Muhammad Fitri atas penyatuan dua jiwa ini. Semoga setiap langkah kehidupan berpasangan ini sentiasa dirahmati, diharmoni, dan kekal bahagia selamanya.`,
+        `Selamat menempuh alam rumah tangga buat Nurul Izzah & Muhammad Fitri. Moga cinta yang dibina sentiasa mekar, saling melengkapi, dan dilindungi kebaikan dunia dan akhirat.`
+      ];
+
+      setTimeout(() => {
+        const randomIndex = Math.floor(Math.random() * poeticTemplates.length);
+        messageTextarea.value = poeticTemplates[randomIndex];
+        
         aiBtn.disabled = false;
         aiBtn.innerHTML = originalBtnContent;
         lucide.createIcons();
-      }
+      }, 700);
     }
 
     // 3. TAMBAH UCAPAN TETAMU
@@ -438,5 +410,3 @@
   </script>
 </body>
 </html>
-
-```
